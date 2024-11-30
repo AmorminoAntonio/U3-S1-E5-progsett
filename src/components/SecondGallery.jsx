@@ -1,23 +1,23 @@
 import { Component } from "react";
-import { Card, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 
 class SecondGallery extends Component {
   state = {
     filmB: []
   };
   getFilm = () => {
-    fetch("http://www.omdbapi.com/?apikey=5fd011cf&s=batman")
+    fetch("http://www.omdbapi.com/?apikey=5fd011cf&s=harry potter")
       .then((res) => {
         if (res.ok) {
           return res.json();
         } else {
-          throw new error("Errore nel reperimento dei dati!");
+          throw new Error("Errore nel reperimento dei dati!");
         }
       })
       .then((film) => {
         console.log(film);
         if (film.Search) {
-          this.setState({ filmB: film.Search });
+          this.setState({ filmB: film.Search.slice(0, 6) });
         }
       })
       .catch((e) => {
@@ -30,20 +30,19 @@ class SecondGallery extends Component {
   render() {
     return (
       <>
-        <Row xs={1} sm={2} md={3} lg={4} xl={6} className="mb-4">
+        <Row xs={1} sm={2} md={3} lg={4} xl={6} className="align-items-start">
           {this.state.filmB.map((film) => (
-            <Col key={film.imdbID} className="mb-4 text-center px-1">
-              <Card className="border-0">
+            <Col key={film.imdbID} id="card-img">
+              <Card className="border-none border-dark rounded-4">
                 <Card.Img
                   src={film.Poster}
                   alt={film.Title}
-                  className="img-fluid"
-                  style={{
-                    height: "150px",
-                    objectFit: "cover"
-                  }}
+                  className="rounded-3"
                 />
               </Card>
+              <Card.Title className="text-light fs-6">
+                {film.Title}
+              </Card.Title>
             </Col>
           ))}
         </Row>

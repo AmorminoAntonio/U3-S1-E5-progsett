@@ -1,15 +1,15 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { BellFill } from "react-bootstrap-icons";
 import { Search } from "react-bootstrap-icons";
-import { PersonFill } from "react-bootstrap-icons";
 
 const MyNav = () => (
   <Navbar expand="lg" bg="dark" data-bs-theme="dark">
-    <Container fluid className="mx-5">
+    <Container fluid className="ms-5 me-5">
       <Navbar.Brand href="#home">
         <img
           src="https://cdn-icons-png.flaticon.com/128/5977/5977590.png"
-          height={150}
+          height={130}
+          className="ms-3 me-4"
         />
       </Navbar.Brand>
 
@@ -22,7 +22,7 @@ const MyNav = () => (
           <Nav.Link href="#Recently Added">Recently Added</Nav.Link>
           <Nav.Link href="#My List">My List</Nav.Link>
         </Nav>
-        <Nav className="ms-auto">
+        <Nav className="ms-auto align-items-center">
           <Nav.Link href="#home">
             <Search />
           </Nav.Link>
@@ -30,10 +30,19 @@ const MyNav = () => (
           <Nav.Link href="#pricing">
             <BellFill />
           </Nav.Link>
-          <NavDropdown title={<PersonFill />} id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Settings</NavDropdown.Item>
-          </NavDropdown>
+          <Dropdown>
+            <Dropdown.Toggle
+            className="align-items-baseline"
+              variant="dark"
+              id="dropdown-basic"
+            >
+             <img src="./src/assets/teenager.png" className="bg-danger me-1" id="icon-profile" alt="" />
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="text-bg-dark-subtle" variant="dark">
+              <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Nav>
       </Navbar.Collapse>
     </Container>

@@ -2,9 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MyNav from "./components/MyNav";
 import MyMain from "./components/MyMain";
-import FirstGallery from "./components/FirstGallery";
-import SecondGallery from "./components/SecondGallery";
-import ThirdGallery from "./components/ThirdGallery";
+import MyFullGallery from "./components/MyFullGallery";
+import MyFooter from "./components/MyFooter";
 
 
 function App() {
@@ -12,9 +11,8 @@ function App() {
     <>
       <MyNav />
       <MyMain />
-      <FirstGallery/>
-      <SecondGallery/>
-      <ThirdGallery/>
+      <MyFullGallery/>
+      <MyFooter/>
     </>
   );
 }
