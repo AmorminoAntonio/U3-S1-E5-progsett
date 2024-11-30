@@ -6,7 +6,7 @@ class SecondGallery extends Component {
     filmB: []
   };
   getFilm = () => {
-    fetch("http://www.omdbapi.com/?apikey=5fd011cf&s=harry potter")
+    fetch("http://www.omdbapi.com/?apikey=5fd011cf&s=sword art online")
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -30,7 +30,7 @@ class SecondGallery extends Component {
   render() {
     return (
       <>
-        <Row xs={1} sm={2} md={3} lg={4} xl={6} className="align-items-start">
+        <Row xs={1} sm={2} md={3} xl={6} className="align-items-center">
           {this.state.filmB.map((film) => (
             <Col key={film.imdbID} id="card-img">
               <Card className="border-none border-dark rounded-4">
@@ -40,9 +40,7 @@ class SecondGallery extends Component {
                   className="rounded-3"
                 />
               </Card>
-              <Card.Title className="text-light fs-6">
-                {film.Title}
-              </Card.Title>
+              <Card.Title className="text-light fs-6">{film.Title}</Card.Title>
             </Col>
           ))}
         </Row>

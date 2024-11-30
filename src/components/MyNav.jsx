@@ -32,15 +32,25 @@ const MyNav = () => (
           </Nav.Link>
           <Dropdown>
             <Dropdown.Toggle
-            className="align-items-baseline"
+              className="align-items-baseline"
               variant="dark"
               id="dropdown-basic"
             >
-             <img src="./src/assets/teenager.png" className="bg-danger me-1" id="icon-profile" alt="" />
+              <img
+                src="./src/assets/teenager.png"
+                className="bg-danger me-1"
+                id="icon-profile"
+                alt=""
+              />
             </Dropdown.Toggle>
             <Dropdown.Menu className="text-bg-dark-subtle" variant="dark">
-              <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
+              <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Gestisci Profili</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Impostazioni</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Lingua</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Chiudi sessione</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Aiuto e Supporto</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Esci da Netflix</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Nav>

@@ -16,7 +16,7 @@ const MyMain = () => (
             </Dropdown.Toggle>
             <Dropdown.Menu variant="dark">
               <Dropdown.Item href="#/action-1">Anime</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Fantasy</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Commedy</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
